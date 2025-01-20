@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 425px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo{
+    width: 200px;
+    margin-inline: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.menu button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+}
+
+.menu button:hover {
+    background-color: #005bb5;
+}
+
+#content {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.product-item p {
+    font-size: 16px;
+}
+
+.buying-btn {
+    padding: 6px 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.buying-btn:hover {
+    background-color: #218838;
+}
+
+#content p {
+    font-size: 14px;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.cart-item p {
+    font-size: 14px;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button#add-balance-submit {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button#add-balance-submit:hover {
+    background-color: #218838;
+}
+
+@media (width >425px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 25px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+    
+    .menu button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #0066cc;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%;
+    }
+    
+    .menu button:hover {
+        background-color: #005bb5;
+    }
+    
+    #content {
+        padding: 25px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+        font-size: 28px;
+        margin-bottom: 18px;
+        color: #333;
+    }
+    
+    .product-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    
+    .product-item p {
+        font-size: 20px;
+    }
+    
+    .buying-btn {
+        padding: 8px 18px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .buying-btn:hover {
+        background-color: #218838;
+    }
+    
+    #content p {
+        font-size: 18px;
+        color: #333;
+    }
+    
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+    
+    .cart-item p {
+        font-size: 18px;
+    }
+    
+    input {
+        padding: 12px;
+        font-size: 18px;
+        width: 100%;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button#add-balance-submit {
+        padding: 12px 25px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    button#add-balance-submit:hover {
+        background-color: #218838;
+    }
+    
+}
