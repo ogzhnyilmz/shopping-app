@@ -70,6 +70,7 @@ function buyingProduct() {
     const content = document.querySelector("#content");
     content.innerHTML = "<h2>Ürünler</h2>";
 
+    // Ürünleri listeleme
     products.forEach((product, index) => {
         content.innerHTML += `
             <div>
@@ -79,37 +80,41 @@ function buyingProduct() {
         `;
     });
 
-    content.removeEventListener("click", handleProductClick);
-    content.addEventListener("click", handleProductClick);
+    // Sepete ekleme butonlarına click listener ekleme
+    const buttons = document.querySelectorAll('.buying-btn');
+    buttons.forEach(button => {
+        button.removeEventListener("click", handleProductClick);  // Önceki dinleyicileri temizle
+        button.addEventListener("click", handleProductClick);     // Yeni listener ekle
+    });
 }
 
 function handleProductClick(event) {
-    const button = event.target.closest('.buying-btn');
-    if (button) {
-        const index = button.dataset.index;
-        const product = products[index];
+    const button = event.target;
+    const index = button.dataset.index;
+    const product = products[index];
 
-        if (balance >= product.price && product.stock > 0) {
-            balance -= product.price;
-            product.stock -= 1;
+    if (balance >= product.price && product.stock > 0) {
+        balance -= product.price;
+        product.stock -= 1;
 
-            const cartItem = cart.find(item => item.name === product.name);
-            if (cartItem) {
-                cartItem.quantity += 1;
-            } else {
-                cart.push({ name: product.name, price: product.price, quantity: 1 });
-            }
-
-            alert(`${product.name} sepete eklendi. Kalan Bakiye: ${balance} TL`);
-        } else if (product.stock === 0) {
-            alert("Ürün stokta kalmadı!");
+        const cartItem = cart.find(item => item.name === product.name);
+        if (cartItem) {
+            cartItem.quantity += 1;
         } else {
-            alert("Yetersiz bakiye!");
+            cart.push({ name: product.name, price: product.price, quantity: 1 });
         }
+
+        alert(`${product.name} sepete eklendi. Kalan Bakiye: ${balance} TL`);
+    } else if (product.stock === 0) {
+        alert("Ürün stokta kalmadı!");
+    } else {
+        alert("Yetersiz bakiye!");
     }
-    
+
+    // Ürün listesini güncelle
     buyingProduct();
 }
+
 
 buyProduct.addEventListener("click", buyingProduct);
 
